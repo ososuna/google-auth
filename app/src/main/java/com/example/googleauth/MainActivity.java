@@ -46,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
     userEmail = findViewById(R.id.userEmail);
     userID = findViewById(R.id.userId);
     userImg = findViewById(R.id.userImagen);
-    btnCerrarSesion = findViewById(R.id.btnLogout);
     btnEliminarCta = findViewById(R.id.btnEliminarCta);
 
     mAuth = FirebaseAuth.getInstance();
@@ -64,30 +63,6 @@ public class MainActivity extends AppCompatActivity {
             .requestEmail()
             .build();
     mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-
-    btnCerrarSesion.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View view) {
-        //
-        mAuth.signOut();
-        //
-        //Cerrar sesión con google tambien: Google sign out
-        mGoogleSignInClient.signOut().addOnCompleteListener(new OnCompleteListener<Void>() {
-          @Override
-          public void onComplete(@NonNull Task<Void> task) {
-            //Abrir MainActivity con SigIn button
-            if (task.isSuccessful()) {
-              Intent loginActivity = new Intent(getApplicationContext(), MainActivity.class);
-              startActivity(loginActivity);
-              MainActivity.this.finish();
-            } else {
-              Toast.makeText(getApplicationContext(), "No se pudo cerrar sesión con google",
-                      Toast.LENGTH_LONG).show();
-            }
-          }
-        });
-      }
-    });
     //
     btnEliminarCta.setOnClickListener(new View.OnClickListener() {
       @Override

@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.19384057971014493" />
         <entry key="app/src/main/res/drawable/btn_bg.xml" value="0.214" />
         <entry key="app/src/main/res/drawable/btn_logout.xml" value="0.214" />
         <entry key="app/src/main/res/drawable/gradiente_background.xml" value="0.214" />
